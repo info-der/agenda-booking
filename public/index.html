@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prendre rendez-vous | MG2L</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MG2L / VALORIALE</p>
+        <h1>Prendre rendez-vous</h1>
+        <p class="lead">Répondez à quelques questions rapides afin de sélectionner le créneau le plus adapté à votre besoin.</p>
+      </div>
+      <div class="badge">Agenda connecté</div>
+    </section>
+
+    <section class="card" id="step-reason">
+      <h2>1. Motif du rendez-vous</h2>
+      <div class="grid" id="meetingTypes"></div>
+    </section>
+
+    <section class="card hidden" id="step-questions">
+      <h2>2. Questionnaire rapide</h2>
+      <form id="questionsForm" class="form"></form>
+      <button class="primary" id="questionsNext" type="button">Continuer</button>
+    </section>
+
+    <section class="card hidden" id="step-contact">
+      <h2>3. Vos coordonnées</h2>
+      <form id="contactForm" class="form two-cols">
+        <label>Nom et prénom *<input id="name" required autocomplete="name" /></label>
+        <label>Email *<input id="email" type="email" required autocomplete="email" /></label>
+        <label>Téléphone<input id="phone" autocomplete="tel" /></label>
+        <label>Société<input id="company" autocomplete="organization" /></label>
+        <label>SIREN<input id="siren" inputmode="numeric" maxlength="9" placeholder="Ex. 879914075" /></label>
+        <label>Commentaire libre<textarea id="comment" rows="3" placeholder="Précisez votre demande si nécessaire"></textarea></label>
+      </form>
+      <p class="small">Les informations saisies servent uniquement à préparer le rendez-vous et à confirmer la réservation.</p>
+      <button class="primary" id="loadSlots" type="button">Voir les disponibilités</button>
+    </section>
+
+    <section class="card hidden" id="step-slots">
+      <h2>4. Choisissez un créneau</h2>
+      <div id="status" class="status">Chargement des disponibilités...</div>
+      <div class="slots" id="slots"></div>
+    </section>
+
+    <section class="card hidden success" id="step-success">
+      <h2>Rendez-vous confirmé</h2>
+      <p>Votre demande a bien été enregistrée. Une invitation agenda vous sera transmise à l’adresse indiquée.</p>
+      <p id="meetLink" class="small"></p>
+    </section>
+
+    <footer>
+      Mail à caractère confidentiel - MG2L SAS - Courtier en opérations d’Assurances et de Réassurances - Courtier en opérations de banque et services de paiement - ORIAS n°20002620.
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
